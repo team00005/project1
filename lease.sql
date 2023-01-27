@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-01-26 10:27:02
+-- 產生時間： 2023-01-27 05:23:12
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -130,6 +130,25 @@ CREATE TABLE `products` (
 CREATE TABLE `region` (
   `RegionID` int(11) NOT NULL,
   `RegionDescription` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `register`
+--
+
+CREATE TABLE `register` (
+  `LoginID` int(11) NOT NULL,
+  `Login_name` varchar(40) NOT NULL,
+  `Login_pass` varchar(30) NOT NULL,
+  `C_Name` varchar(20) NOT NULL,
+  `E_Name` varchar(20) NOT NULL,
+  `Email` varchar(100) DEFAULT NULL,
+  `birthday` date NOT NULL,
+  `L_sex` tinyint(4) NOT NULL,
+  `L_active` tinyint(4) NOT NULL,
+  `L_regd` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 COMMIT;
 
